@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meryem Yavas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal website of Meryem Yavaş, PhD student in Economics.">
+  <style>
+    /* ---------- Base styles ---------- */
+    :root {
+      --bg: #f9fafb;
+      --bg-alt: #ffffff;
+      --accent: #4b5563;
+      --accent-strong: #111827;
+      --link: #2563eb;
+      --link-hover: #1d4ed8;
+      --border: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --max-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* ---------- Layout ---------- */
+    header {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .site-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-strong);
+      white-space: nowrap;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      padding-bottom: 0.1rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover, nav a:focus {
+      border-bottom-color: var(--link-hover);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      background: var(--bg-alt);
+      padding: 1.4rem 1.6rem;
+      border-radius: 0.6rem;
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      margin-bottom: 0.3rem;
+      color: var(--accent-strong);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent-strong);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 0.7rem 0 0.2rem;
+      color: var(--accent);
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .tagline {
+      margin-bottom: 0.75rem;
+    }
+
+    .field-list {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      object-fit: cover;
+    }
+
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.4rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      background: #eef2ff;
+    }
+
+    .cv-link span {
+      margin-left: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    ul.paper-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.paper-list li {
+      margin-bottom: 0.9rem;
+    }
+
+    .paper-title {
+      font-weight: 600;
+    }
+
+    .paper-status {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .teaching-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .teaching-list li {
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 0.8rem 1rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 720px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="site-title">Meryem Yavaş</div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">Home</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ---------- HOME / ABOUT ---------- -->
+    <section id="about">
+      <div class="two-column">
+        <div>
+          <h1>Meryem Yavaş</h1>
+          <p class="tagline">
+            PhD student in Economics, <span class="muted">University of Wisconsin–Madison</span>
+          </p>
+          <p>
+            I am a fourth-year PhD candidate in Economics at the University of Wisconsin–Madison.
+            My research interests are in labor, health and education economics, with a focus on
+            higher education admissions, inequality of opportunity, and the interaction
+            between policy and individual choices.
+          </p>
+          <p class="field-list">
+            Fields of interest: Labor, Education, Applied Microeconomics
+          </p>
+
+          <a class="cv-link" href="cv_meryem_yavas.pdf">
+            <span>📄 CV</span>
+            <span>(PDF)</span>
+          </a>
+        </div>
+
+        <div>
+          <!-- Replace src with your own photo file name -->
+          <img src="meryem_photo.jpg" alt="Photo of Meryem Yavaş" class="profile-photo">
+          <p class="muted" style="margin-top:0.4rem;">
+            Email: <a href="mailto:YOUR_EMAIL@wisc.edu">YOUR_EMAIL@wisc.edu</a>
+          </p>
+          <p class="muted">
+            Department of Economics<br>
+            University of Wisconsin–Madison
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- RESEARCH ---------- -->
+    <section id="research">
+      <h2>Research</h2>
+
+      <h3>Working Papers</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">
+            “TITLE OF WORKING PAPER 1”
+          </div>
+          <div class="paper-status">
+            Working paper, 2025. <span>With Coauthor Name(s).</span>
+          </div>
+          <p>
+            One or two sentences summarizing the paper. If available, link to the
+            paper: <a href="paper1_yavas.pdf">pdf</a> or <a href="https://ssrn.com/">SSRN</a>.
+          </p>
+        </li>
+        <li>
+          <div class="paper-title">
+            Direct Admissions into Majors and College Choice (Field Paper)
+          </div>
+          <div class="paper-status">
+            Slides
+          </div>
+          <p>
+            Brief description of the idea and contribution. Keep it concise; you can
+            update as the project develops.
+          </p>
+        </li>
+      </ul>
+
+      <h3>Work in Progress</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">
+            Chronic Pain and Occupation Choice
+          </div>
+          <p>
+            1–2 sentence description of the question, data, and rough approach.
+          </p>
+        </li>
+        <li>
+          <div class="paper-title">
+            GPA Requirements and College Major Transfers (with Hyun Lim)
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- ---------- CV ---------- -->
+    <section id="cv">
+      <h2>CV &amp; Contact</h2>
+
+      <h3>Curriculum Vitae</h3>
+      <p>
+        You can find my CV here:
+        <a href="cv_meryem_yavas.pdf">Download CV (PDF)</a>
+      </p>
+
+      <h3>Contact</h3>
+      <ul class="contact-list">
+        <li>
+          Email: <a href="mailto:yavas2@wisc.edu">YOUR_EMAIL@wisc.edu</a>
+        </li>
+        <li>
+          Office: 8418, Social Sciences Building,<br>
+          University of Wisconsin–Madison, Madison, WI
+        </li>
+        <!-- Add if you want:
+        <li>
+          Twitter: <a href="https://twitter.com/yourhandle">@yourhandle</a>
+        </li>
+        <li>
+          GitHub: <a href="https://github.com/yourhandle">github.com/yourhandle</a>
+        </li>
+        -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Meryem Yavaş · Economics · University of Wisconsin–Madison
+    <script>
+      // Small script to keep the year current
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
