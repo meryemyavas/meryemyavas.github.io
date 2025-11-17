@@ -79,10 +79,17 @@
     nav a {
       padding-bottom: 0.1rem;
       border-bottom: 2px solid transparent;
+      cursor: pointer;
     }
 
-    nav a:hover, nav a:focus {
+    nav a:hover,
+    nav a:focus {
       border-bottom-color: var(--link-hover);
+    }
+
+    nav a.active-tab {
+      border-bottom-color: var(--link);
+      font-weight: 600;
     }
 
     main {
@@ -97,6 +104,15 @@
       padding: 1.4rem 1.6rem;
       border-radius: 0.6rem;
       border: 1px solid var(--border);
+    }
+
+    /* ---------- Tab behavior ---------- */
+    .tab-section {
+      display: none;
+    }
+
+    .tab-section.active {
+      display: block;
     }
 
     h1 {
@@ -146,199 +162,4 @@
       width: 100%;
       max-width: 220px;
       border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      object-fit: cover;
-    }
-
-    .cv-link {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 0.4rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 0.9rem;
-      background: #eef2ff;
-    }
-
-    .cv-link span {
-      margin-left: 0.35rem;
-      font-size: 0.9rem;
-    }
-
-    ul.paper-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul.paper-list li {
-      margin-bottom: 0.9rem;
-    }
-
-    .paper-title {
-      font-weight: 600;
-    }
-
-    .paper-status {
-      font-style: italic;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .teaching-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .teaching-list li {
-      margin-bottom: 0.8rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0.4rem;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.25rem;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 0.8rem 1rem 1.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 720px) {
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="nav-container">
-      <div class="site-title">Meryem Yavaş</div>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="#about">Home</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#cv">CV & Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- ---------- HOME / ABOUT ---------- -->
-    <section id="about">
-      <div class="two-column">
-        <div>
-          <h1>Meryem Yavas</h1>
-          <p class="tagline">
-            PhD student in Economics, <span class="muted">University of Wisconsin–Madison</span>
-          </p>
-          <p>
-            I am a fourth-year PhD candidate in Economics at the University of Wisconsin–Madison.
-            My research interests are in labor, health and education economics, with a focus on
-            higher education admissions, inequality of opportunity, and the interaction
-            between policy and individual choices.
-          </p>
-          <p class="field-list">
-            Fields of interest: Labor, Education, Applied Microeconomics
-          </p>
-        </div>
-
-        <div>
-          <img src="website_photo.jpg" alt="Photo of Meryem" class="profile-photo">
-        </div>
-      </div>
-    </section>
-
-    <!-- ---------- RESEARCH ---------- -->
-    <section id="research">
-      <h2>Research</h2>
-      <h3>Work in Progress</h3>
-      <ul class="paper-list">
-        <li>
-          <div class="paper-title">
-            Chronic Pain and Occupation Choice
-          </div>
-          <div class="paper-status">
-            <span>With Nicholas Garvey.</span>
-          </div>
-          <p>
-            1–2 sentence description of the question, data, and rough approach.
-          </p>
-        </li>
-        <li>
-          <div class="paper-title">
-            GPA Requirements and College Major Transfers (with Hyun Lim)
-          </div>
-          <div class="paper-status">
-            <span>With Hyun Lim.</span>
-          </div>
-        </li>
-      </ul>
-      
-      <h3>Working Papers</h3>
-      <ul class="paper-list">
-        <li>
-          <div class="paper-title">
-            Direct Admissions into Majors and College Choice
-          </div>
-          <div class="paper-status">
-            2nd year Field Paper [slides]
-          </div>
-          <p>
-            Brief description of the idea and contribution. Keep it concise; you can
-            update as the project develops.
-          </p>
-        </li>
-      </ul>
-      
-    </section>
-
-
-    <!-- ---------- CV ---------- -->
-    <section id="cv">
-      <h2>CV &amp; Contact</h2>
-
-      <h3>Curriculum Vitae</h3>
-      <p>
-        You can find my CV here:
-        <a href="Yavas_CV.pdf">Download CV (PDF)</a>
-      </p>
-
-      <h3>Contact</h3>
-      <ul class="contact-list">
-        <li>
-          Email: <a href="mailto:yavas2@wisc.edu">yavas2@wisc.edu</a>
-        </li>
-        <li>
-          Office: 8418, Social Sciences Building,<br>
-          University of Wisconsin–Madison, Madison, WI
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Meryem Yavaş · University of Wisconsin–Madison
-    <script>
-      // Small script to keep the year current
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
-</body>
-</html>
+      border:
